@@ -30,6 +30,11 @@ public class AirPlane {
         return maxColCountInSeatGroups;
     }
 
+    /**
+     * Fill the seats with passengers
+     *
+     * @param numOfPassengers number of passengers to fill
+     */
     public void fillSeats(int numOfPassengers) {
         int passengerCount = 1;
         int maxColCountInSeatGroups = getMaxColCountInSeatGroups(seatGroups);
@@ -80,6 +85,10 @@ public class AirPlane {
         }
     }
 
+    /**
+     *  Label seats with a SeatType
+     * @param seatGroups
+     */
     private void labelSeats(List<SeatGroup> seatGroups) {
 
         SeatGroup FirstSeatGroup = seatGroups.get(0);
@@ -127,6 +136,9 @@ public class AirPlane {
         }
     }
 
+    /**
+     * Label seat with SeatType
+     */
     private void labelSeats(Seat[][] seatsInLastSeatGroup, int j, int a, int b) {
         for (int k = 0; k < seatsInLastSeatGroup[j].length; k++) {
             if (j == a) {
