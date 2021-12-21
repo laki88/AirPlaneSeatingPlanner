@@ -1,5 +1,10 @@
 package org.laki;
 
+import org.laki.beans.Passenger;
+import org.laki.beans.Seat;
+import org.laki.beans.SeatGroup;
+import org.laki.beans.SeatType;
+
 import java.util.List;
 
 public class AirPlane {

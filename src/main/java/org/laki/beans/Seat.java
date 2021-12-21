@@ -1,4 +1,4 @@
-package org.laki;
+package org.laki.beans;
 
 public class Seat {
 

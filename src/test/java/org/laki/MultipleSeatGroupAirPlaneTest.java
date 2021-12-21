@@ -3,6 +3,8 @@ package org.laki;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.laki.beans.SeatGroup;
+import org.laki.beans.SeatType;
 
 import java.util.ArrayList;
 import java.util.List;
