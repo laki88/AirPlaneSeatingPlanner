@@ -6,7 +6,6 @@ import org.laki.beans.Seat;
 import org.laki.beans.SeatGroup;
 
 import java.util.*;
-import java.util.stream.Stream;
 
 public class ConsolePresenter implements Presenter {
 
