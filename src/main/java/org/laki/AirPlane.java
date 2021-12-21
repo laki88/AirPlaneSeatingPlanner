@@ -99,29 +99,13 @@ public class AirPlane {
             }
         } else {
             for (int j = 0; j < seatsInFirstSeatGroup.length; j++) {
-                for (int k = 0; k < seatsInFirstSeatGroup[j].length; k++) {
-                    if (j == 0) {
-                        seatsInFirstSeatGroup[j][k].setSeatType(SeatType.WINDOW_SEAT);
-                    } else if (j != seatsInFirstSeatGroup.length - 1) {
-                        seatsInFirstSeatGroup[j][k].setSeatType(SeatType.MIDDLE_SEAT);
-                    } else {
-                        seatsInFirstSeatGroup[j][k].setSeatType(SeatType.AISLE_SEAT);
-                    }
-                }
+                labelSeats(seatsInFirstSeatGroup, j, 0, seatsInFirstSeatGroup.length - 1);
             }
 
             SeatGroup LastSeatGroup = seatGroups.get(seatGroups.size() - 1);
             Seat[][] seatsInLastSeatGroup = LastSeatGroup.getSeats();
             for (int j = seatsInLastSeatGroup.length - 1; j >= 0; j--) {
-                for (int k = 0; k < seatsInLastSeatGroup[j].length; k++) {
-                    if (j == seatsInLastSeatGroup.length - 1) {
-                        seatsInLastSeatGroup[j][k].setSeatType(SeatType.WINDOW_SEAT);
-                    } else if (j != 0) {
-                        seatsInLastSeatGroup[j][k].setSeatType(SeatType.MIDDLE_SEAT);
-                    } else {
-                        seatsInLastSeatGroup[j][k].setSeatType(SeatType.AISLE_SEAT);
-                    }
-                }
+                labelSeats(seatsInLastSeatGroup, j, seatsInLastSeatGroup.length - 1, 0);
             }
             if (seatGroups.size() > 2) {
                 for (int i = 1; i < seatGroups.size() - 1; i++) {
@@ -139,6 +123,18 @@ public class AirPlane {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    private void labelSeats(Seat[][] seatsInLastSeatGroup, int j, int a, int b) {
+        for (int k = 0; k < seatsInLastSeatGroup[j].length; k++) {
+            if (j == a) {
+                seatsInLastSeatGroup[j][k].setSeatType(SeatType.WINDOW_SEAT);
+            } else if (j != b) {
+                seatsInLastSeatGroup[j][k].setSeatType(SeatType.MIDDLE_SEAT);
+            } else {
+                seatsInLastSeatGroup[j][k].setSeatType(SeatType.AISLE_SEAT);
             }
         }
     }

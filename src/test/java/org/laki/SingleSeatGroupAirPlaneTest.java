@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.laki.beans.SeatGroup;
 import org.laki.beans.SeatType;
+import org.laki.frontend.ConsolePresenter;
+import org.laki.frontend.Presenter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,6 +61,7 @@ public class SingleSeatGroupAirPlaneTest {
         Assert.assertEquals(2, seatsInAirPlane.get(0).getSeats()[2][0].getPassenger().getSeqNo());
         Assert.assertEquals(4, seatsInAirPlane.get(0).getSeats()[2][1].getPassenger().getSeqNo());
 
-
+        Presenter presenter = new ConsolePresenter();
+        presenter.printSeatingArrangement(seatsInAirPlane);
     }
 }
